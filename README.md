@@ -50,12 +50,12 @@
 - [Objects](#objects)
 - [For Loop](#for-loop)
 - [While Loop](#while-loop)
-- [Destructuring assignment](#destructuring-assignment)
-- [Short Circuiting (\&\& and ||)](#short-circuiting--and)
-- [Nullish coalescing operator (??)](#nullish-coalescing-operator)
-- [Logical OR assignment (||=)](#logical-or-assignment)
-- [Logical nullish assignment (??=)](#logical-nullish-assignment)
-- [Bitwise AND assignment (\&=)](#bitwise-and-assignment)
+- [Difference Between Rest and Spread Operator](#difference-between-rest-and-spread-operator)
+- [Short Circuiting (\&\& and ||)](#short-circuiting--and-)
+- [Nullish coalescing operator (??)](#nullish-coalescing-operator-)
+- [Logical OR assignment (||=)](#logical-or-assignment-)
+- [Logical nullish assignment (??=)](#logical-nullish-assignment-)
+- [Bitwise AND assignment (\&=)](#bitwise-and-assignment-)
 - [Enhanced Object Literals](#enhanced-object-literals)
 - [Optional chaining (?.)](#optional-chaining)
 - [Set](#set)
@@ -860,13 +860,74 @@ these objects are going to be used by the JavaScript Engine. Each time we want t
 
 - [While](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while)
 
-# Destructuring assignment
+# Difference Between Rest and Spread Operator
 
-- [Destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
+The rest ```(...)``` and spread ```(...)``` operators both use the ```...```
+syntax but serve different purposes depending on the context:
+
+1. **Rest Operator ```(...)```**: It is used to collect multiple elements into
+an array. It’s often used in function parameters to gather arguments or to
+collect remaining elements in array/object destructuring. It "collects" values.
+
+Examples:
+
+  a. **Function Parameters**
+  ```JavaScript
+    function sum(...numbers) { // Collects all arguments into an array
+      return numbers.reduce((acc, curr) => acc + curr, 0);
+    }
+
+    sum(1, 2, 3, 4); // Output: 10
+  ```
+
+  b. **Array Destructuring**
+  ```JavaScript
+    const [first, ...rest] = [1, 2, 3, 4];
+    console.log(first); // Output: 1
+    console.log(rest);  // Output: [2, 3, 4]
+  ```
+
+  c. **Object Destructuring**
+  ```JavaScript
+    const { a, ...others } = { a: 1, b: 2, c: 3 };
+    console.log(a);      // Output: 1
+    console.log(others); // Output: { b: 2, c: 3 }
+  ```
+
+2. **Spread Operator ```(...)```**: It is used to expand or "spread out" elements
+of an iterable (like an array, string, or object). It "spreads" values.
+
+Examples:
+
+  a. **Array Expansion**
+  ```JavaScript
+    const arr1 = [1, 2];
+    const arr2 = [...arr1, 3, 4]; // Expands arr1 elements into arr2
+    console.log(arr2); // Output: [1, 2, 3, 4]
+  ```
+
+  b. **Object Expansion**
+  ```JavaScript
+    const obj1 = { a: 1, b: 2 };
+    const obj2 = { ...obj1, c: 3 }; // Expands obj1 properties into obj2
+    console.log(obj2); // Output: { a: 1, b: 2, c: 3 }
+  ```
+
+  c. **Function Arguments**
+  ```JavaScript
+    function add(a, b, c) {
+      return a + b + c;
+    }
+
+    const numbers = [1, 2, 3];
+    console.log(add(...numbers)); // Expands array elements as arguments
+    // Output: 6
+  ```
+
+  References:
+  - [Destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
   - [Spread syntax (...)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
   - [Rest parameters](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters)
-
-IMPORTANT: The `spread` and `rest` syntax both look exactly the same but, they work in opposite ways depending on where they are used. So, the `spread operator` is used where we would otherwise write values separated by a comma; on the other hand, the `rest pattern` is basically used where we would otherwise write variable names separated by commas. So, it's a suttle distinction but this is how you know when/where to used.
 
 # Short Circuiting (&& and ||)
 
