@@ -15,6 +15,7 @@
 
 - [How to open the inspector tools in Chrome](#how-to-open-the-inspector-tools-in-chrome)
 - [Brief introduction to JavaScript](#brief-introduction-to-javascript)
+- [Linking a JavaScript file](#linking-a-javascript-file)
 - [Values and Variables](#values-and-variables)
 - [Variable Naming Conventions](#variable-naming-conventions)
 - [Types Of Operators](#types-of-operators)
@@ -169,6 +170,51 @@ What is a **_concurrency model?_** Well, it's just a fancy name that means how t
 
 - **Non-Blocking**: Refers to code that doesn't block the execution of the program. What about if there's a long-running task (like fetching data from a remote server)? it sounds like it would block the single thread. However, we want non-blocking behaviour. Then, how do we achieve that? By using an **event loop**: it takes long running tasks, executes them in the "background", and puts them back in the main thread once they're finished.
   - **Asynchronous Code Definition**: Asynchronous code allows the program to be executed immediately where the synchronous code will block further execution of the remaining code until it finishes the current one.
+
+# Linking a JavaScript file
+
+```HTML
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>JavaScript Fundamentals - Part 1</title>
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        background: linear-gradient(to top left, #28b487, #7dd56f);
+      }
+
+      h1 {
+        font-family: sans-serif;
+        font-size: 50px;
+        line-height: 1.3;
+        width: 100%;
+        padding: 30px;
+        text-align: center;
+        color: white;
+      }
+    </style>
+
+    <!-- Method 1 - Basic -->
+    <script>
+      let js = "amazing";
+
+      if (js === "amazing") alert("JavaScript is FUN!");
+    </script>
+  </head>
+  <body>
+    <h1>JavaScript Fundamentals - Part 1</h1>
+
+    <!-- Method 2 - Modules -->
+    <script src="script.js"></script>
+  </body>
+</html>
+```
 
 # Values and Variables
 
