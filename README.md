@@ -231,18 +231,19 @@ To get into more understanding about decalring variables in JavaScript, please s
 
 ```JavaScript
 // Syntax
-var <variable-name>;
-var <variable-name> = <value>;
+let <variable-name>;
+let <variable-name> = <value>;
 
 // Example
-var firstName = 'Victor';
+let firstName = 'Victor';
 ```
 
 # Variable Naming Conventions
 
 1. They must be written using `lowerCamelCase` notation. Important: Do not start a variable with an uppercase letter. That's not illegal, it's just that this kind of variable names are for a specific use case which is Object Oriented Programming. [See Reference](https://developer.mozilla.org/en-US/docs/MDN/Guidelines/Code_guidelines/JavaScript#variables)
 2. You cannot use keywords from the language such as `new` or `function`.
-3. You are only able to use `$`, `_` , `numbers` and `letters` to declare them, and they cannot start or use any special character.
+3. You are only able to use `$`, `_` , `numbers` and `letters` to declare them,
+and they cannot start with any special character or a number.
 4. Declare only constants using all uppercase letters (it's a convention).
 5. Always make **descriptive** the name for variables so, it provides a notion of what it holds.
 
