@@ -18,6 +18,7 @@
 - [Linking a JavaScript file](#linking-a-javascript-file)
 - [Values and Variables](#values-and-variables)
 - [Variable Naming Conventions](#variable-naming-conventions)
+- [Data types and data structures](#data-types-and-data-structures)
 - [Types Of Operators](#types-of-operators)
 - [Operator Precedence](#operator-precedence)
 - [Template literals (Template strings)](#template-literals-template-strings)
@@ -103,6 +104,9 @@
 - [The 4 fundamental OOP principles](#the-4-fundamental-oop-principles)
 - [How does OOP actually works in JavaScript](#how-does-oop-actually-works-in-javascript)
 - [What is a Generator Function, Provide A Use Case](#what-is-a-generator-function-provide-a-use-case)
+- [DOM Event Propagation](#dom-event-propagation)
+  - [Capturing and Bubbling](#capturing-and-bubbling)
+  - [Event Delegation](#event-delegation)
 
 Extra Important Official References
 
@@ -246,6 +250,11 @@ let firstName = 'Victor';
 and they cannot start with any special character or a number.
 4. Declare only constants using all uppercase letters (it's a convention).
 5. Always make **descriptive** the name for variables so, it provides a notion of what it holds.
+
+# Data types and data structures
+
+- [MDN Web Docs Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures)
+
 
 # Types Of Operators
 
@@ -2579,3 +2588,11 @@ advantages in certain scenarios, modern JavaScript features like Promises,
 async/await, and Iterators have largely replaced generators in many use cases due
 to their more straightforward syntax and improved readability. Always choose the
 tool that best fits your specific task and the maintainability of your code.
+
+# DOM Event Propagation
+
+## Capturing and Bubbling
+[Reference Video](https://drive.google.com/file/d/1sDasFPLaJIE3w70tXx8Q7B9h3fiFCVpC/view)
+
+## Event Delegation
+[Reference Video](https://drive.google.com/file/d/1qEzUF3P2gB7O3NPqjKvO_tzYffugDfZU/view)
