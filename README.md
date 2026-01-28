@@ -2207,7 +2207,21 @@ Some people think they're the same thing, but they mean different things:
 
 [Reference Video](https://drive.google.com/file/d/1QavMHxz56pqRCsMXKDj9pinjORHih0zQ/view?usp=drive_link)
 
-A closure is a feature that allows a function to retain access to variables from its outer (enclosing) scope, even after the outer function has finished executing. This means that the inner function "closes over" the variables from the outer function, creating a closure. A closure in JavaScript has access to:
+A closure is a feature that allows a function to retain access to variables from its outer (enclosing) scope, even after the outer function has finished executing. This means that the inner function "closes over" the variables from the outer function, creating a closure. 
+
+A closure is:
+
+> A function **plus the specific lexical environment it captures**
+
+So the question around them is not:
+
+> "How many functions exist or are created?"
+
+But
+
+> “How many _distinct lexical environments_ are being captured/created?”
+
+A closure in JavaScript has access to:
 
 1. **Variables declared in its own scope:** This includes parameters and variables declared within the function itself.
 
