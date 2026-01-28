@@ -1655,7 +1655,8 @@ _**Scope**_: Space or environment in which a certain variable is **declared** _(
 
 # How the `this` keyword works
 
-[Reference Video](https://drive.google.com/file/d/1U4OuiWZNC4oTjfHVThJ-lbSrzMdqM8uq/view?usp=drive_link)
+> ### ▶️ Reference Video
+> - [Go to video](https://drive.google.com/file/d/1U4OuiWZNC4oTjfHVThJ-lbSrzMdqM8uq/view?usp=drive_link)
 
 If I show this function and ask you to tell me exactly what text is printed on
 the console
@@ -2205,7 +2206,11 @@ Some people think they're the same thing, but they mean different things:
 
 # Closures
 
-[Reference Video](https://drive.google.com/file/d/1QavMHxz56pqRCsMXKDj9pinjORHih0zQ/view?usp=drive_link)
+> ### ▶️ Reference Video
+> - [Go to video](https://drive.google.com/file/d/1QavMHxz56pqRCsMXKDj9pinjORHih0zQ/view?usp=drive_link)
+
+> ### 💡 Interview Questions
+> - [YouTube Short](https://www.youtube.com/shorts/KQ712CebFDM)
 
 A closure is a feature that allows a function to retain access to variables from its outer (enclosing) scope, even after the outer function has finished executing. This means that the inner function "closes over" the variables from the outer function, creating a closure. 
 
@@ -2606,7 +2611,11 @@ tool that best fits your specific task and the maintainability of your code.
 # DOM Event Propagation
 
 ## Capturing and Bubbling
-[Reference Video](https://drive.google.com/file/d/1sDasFPLaJIE3w70tXx8Q7B9h3fiFCVpC/view)
+
+> ### ▶️ Reference Video
+> - [Go to video](https://drive.google.com/file/d/1sDasFPLaJIE3w70tXx8Q7B9h3fiFCVpC/view)
 
 ## Event Delegation
-[Reference Video](https://drive.google.com/file/d/1qEzUF3P2gB7O3NPqjKvO_tzYffugDfZU/view)
+
+> ### ▶️ Reference Video
+> - [Go to video](https://drive.google.com/file/d/1qEzUF3P2gB7O3NPqjKvO_tzYffugDfZU/view)
