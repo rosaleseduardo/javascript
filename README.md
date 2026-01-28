@@ -462,14 +462,14 @@ function divide() {
 
 ## Reassignment
 
-Varibles declared with `const` can't be re-assigned. `cont` serves to declare variable in a `block scope` that can't be re-assigned.
+Varibles declared with `const` can't be re-assigned. `const` serves to declare variable in a `block scope` that can't be re-assigned.
 
 ```JavaScript
 const name = 'Victor';
 name = 'John'; // TypeError: Assignment to constant variable
 ```
 
-it is a `constant variable` but heads up: the fact the is a constant <u>doesn't mean</u> that it's value is immutable.
+it is a `constant variable` but heads up: the fact that it’s constant <u>doesn't mean</u> that it's value is immutable.
 As you may recall, `primitive values are immutable`.
 
 ## Redeclaration
@@ -483,11 +483,11 @@ function greet(name) {
   var greeting = 'Hola';
   var greeting = 'Hello';
 
-  console.log(`${greeting} ${name}`);
+  console.log(`${greeting} ${name}`); // Hello Victor
 }
 ```
 
-but is case we use `let` or `const` instead, this is what will happen
+but in case we use `let` or `const` instead, this is what will happen
 
 ```JavaScript
 function greet(name) {
@@ -515,10 +515,10 @@ function greet(name) {
 
   if (name === 'Victor') {
     let greeting = 'Hello';
-    console.log(`Here the greeting ${greeting}, ${nombre}`);
+    console.log(`Here the greeting: ${greeting}, ${nombre}`); // Here the greeting: Hello Victor
   }
 
-  console.log(`${greeting} ${name}`);
+  console.log(`${greeting} ${name}`); // Hola Victor
 }
 ```
 
@@ -526,14 +526,14 @@ function greet(name) {
 
 In case we declare a variable by using `var` or `let` without defining it, by default, JavaScript will assign the value `undefined` to it.
 
-As you may know, we can not assign a new value to variables declared with `const`, essentially because of its nature, they are `constants`, and it doesn't make sense to declare a constant without a value because we won't be able to assign it one.
+As you may know, variables declared with `const` cannot be assigned a new value. Because they represent constants, they must be initialized at the time of declaration, declaring a `const` without a value would make it impossible to assign one later.
 
 ```JavaScript
 const name;
 name = 'Victor'; // This can't be done
 ```
 
-However, JavaScript won't let us declare a constant without assigning it a value. It will be thown this error
+However, JavaScript won't let us declare a constant without assigning it a value. It will be thrown this error
 
 ```
 SyntaxError: Missing initializer in const declaration
@@ -541,7 +541,7 @@ SyntaxError: Missing initializer in const declaration
 
 ## Global Object Property
 
-If we declare a globally a variable using `var`
+If we declare globally a variable using `var`
 
 ```JavaScript
 var name = 'Victor';
@@ -564,11 +564,13 @@ they will be globally declared if we defined them outside of all blocks of code 
 
 ## Hoisting
 
-`Hoisting` in Spanish translates into `Elevación`, and in JavaScript when we use that term, generally we refer that when we declare variables with `var` inside of a function, it doesn't matter where in the code we've done it, the JavaScript interpreter will do this: It will separate the variable declaration and it's going to elevate to where the scope starts, but just its declararion, its assginment will be left in the same place. This is something internally done by the interpreter at runtime, it's just the way JavaScript reads the code.
+`Hoisting` (translated as elevación) describes how JavaScript handles variable declarations. When a variable is declared with `var` inside a function, the JavaScript interpreter treats the declaration as if it were moved to the top of the function scope. However, _**only the declaration is hoisted**_, the assignment stays where it is written.
+
+This behavior happens internally at runtime and is simply part of how JavaScript reads and executes code.
 
 If we'd like, we would access the variable before its initialization and we'd see its value. It is one of the strangest parts that JavaScript has and that can cause confusion.
 
-With the variables delcared with `let` and `const` the `Hoisting` works differently. We can't access the variable before its initialization, if we attempt it we'll get this error
+With the variables declared with `let` and `const` the `Hoisting` works differently. We can't access the variable before its initialization, if we attempt it we'll get this error
 
 ```JavaScript
 console.log(name);
@@ -590,9 +592,9 @@ if (true) {
 
 what happens in the case of `let` and `const` is that the interpreter is going to read our code and it's also going to separate the variable declaration and elevate it of the start of the scope where it belongs but, they won't be defined as `undefined` but instead, they will be **_marked_** as **_uninitialized_**.
 
-Something also different is that the block that is composed by all the lines of code that go from the beginning of the block until the line where variables are initialized, is called `Temporal Dead Zone`. That means that we won't be able to access a variable before its declaration.
+Another important difference is the `Temporal Dead Zone (TDZ)`, which refers to the period between entering a lexical scope and the moment a variable declared with let or const is initialized.
 
-The `temporal dead zone` refers to the period between the entering of the scope (lexical scope) and the declaration of a variable using let or const keywords. During this temporal dead zone, if you try to access the variable, a `ReferenceError` will be thrown. In other words, it is a region of code where a variable cannot be accessed because the program execution has not yet reached the line of code where it is declared.
+During this phase, the variable cannot be accessed. Any attempt to do so will result in a `ReferenceError`. In other words, the TDZ is the region of code where a variable exists within the scope but remains inaccessible because execution has not yet reached its declaration.
 
 And this is another reason why we should use `let` and `const` over `var`. The `hoisting` is a very strange behavior, in which case would we want to access a variable that hasn't been declared yet?
 
